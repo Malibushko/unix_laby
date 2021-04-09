@@ -46,7 +46,7 @@ done
 if touch $BACKUP_PATH; then
   rm $BACKUP_PATH
   echo "#!/bin/bash" >> $BACKUP_PATH
-  echo "export PATH=$(printenv PATH)" >> $BACKUP_PATH
+  echo "export PATH=\"$(printenv PATH)\"" >> $BACKUP_PATH
   echo "echo \"Backup from \$(date)\" | /usr/bin/mutt $EMAIL -a $FILES" >> $BACKUP_PATH
   chmod a+x $BACKUP_PATH
   
